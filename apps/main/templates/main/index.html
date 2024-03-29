@@ -1,16 +1,42 @@
 {% extends 'base.html' %}
 
-{% block title %}Home{% endblock %}
-
-
+{% block title %}Головна{% endblock %}
 
 {% block content %}
+<style>
+    .fullscreen-bg {
+        background-image: url('https://zp.darg.gov.ua/files/9/09_09_20.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-        <h1>Hello, world!</h1>
-        <p>My first Bootstrap page.</p>
-        <div class="mt-4 rounded-3 bg-body-tertiary p-4">
-          <h3>А Зум вже не запустився</h3>
-          <p>Бонуса немає </p>
-          <p>Що робити?</p>
+    .text-below {
+        margin-top: 600px;
+        padding: 50px;
+        border-radius: 7px;
+    }
+
+    p {
+        color: #b8c4f5; 
+    }
+    h3 {
+        color: #b8c4f5; 
+    }
+</style>
+
+<div class="fullscreen-bg">
+    <div class="text-center">
+        <div class="text-below">
+            <h3>А Зум вже не запустився</h3>
+            <p>Бонуса немає</p>
+            <p>Що робити?</p>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
