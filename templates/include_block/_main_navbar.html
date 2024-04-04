@@ -1,55 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navbar</title>
-    <!-- Підключення вашого CSS файлу -->
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        .nav-item a.btn {
-            transition: transform 0.4s ease;
-        }
+<a class="btn btn-outline-primary btn-sm" href="{% url 'admin:index' %}">Admin</a>
 
-        .nav-item .admin-btn.btn.btn-outline-primary.btn-sm:hover {
-            transform: none;
-        }
-
-        .nav-item .settings-btn.btn.btn-md:hover {
-            transform: rotate(50deg);
-        }
-        .translate{
-            background: transparent;
-            border: none;
-            margin-left: 12px
-        }
-    </style>
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container">
-            <a class="navbar-brand" href="{% url 'main:index' %}">???</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="btn btn-outline-primary btn-sm admin-btn" href="{% url 'admin:index' %}">Admin</a>
-                    </li>
-                    
-                </ul>
-                <ul class="navbar-nav ml-auto"> 
-                    <li class="nav-item">
-                        <a class="btn btn-md settings-btn" href="{% url 'setings:index' %}">
-                            <i class="fa-solid fa-gear"></i>
-                        </a>
-                    </li>
-                    <li class="header-item-lang-en"><button id='en' class = 'translate'><img src="https://www.5.ua/media/pictures/original/146560.jpg?t=1534932390" alt='enflag' width='30px'height='20px'></img></button></li>
-                    <li class="header-item-lang-ua"><button id='ua' class = 'translate'><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/640px-Flag_of_the_United_Kingdom_%283-5%29.svg.png" alt='uaflag' width='30px'height='20px'></img></button></li>   
-                </ul>
-            </div>
-        </div>
-    </nav>
-</body>
-</html>
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav d-flex justify-content-center"> 
+        <li class="nav-item">
+          <a class="nav-link" href="fisiks">Фізика</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="matan">Математика</a>
+        </li>
+      </ul>
+    </div>
+    <div class='text-center'>    
+      <div class="form-check form-switch mt-3">
+        <input class="form-check-input" type="checkbox" id="themeSwitch">
+      </div>
+    </div>
+  </div>
+</nav>
