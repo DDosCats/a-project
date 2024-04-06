@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     'apps.main',
+    'apps.physics',
+    'apps.math_all',
 ]
 
 MIDDLEWARE = [
