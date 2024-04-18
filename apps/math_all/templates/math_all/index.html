@@ -59,22 +59,25 @@
     p {
         margin-top: 20px; 
         margin-left: 30px; 
-        font-size: 30px;
-        font-family: 'Tilt Neon'; 
+        font-size: 20px; 
     }
     p1 {
         margin-top: 15pxpx; 
         margin-left: 15px; 
         font-size: 15px;
-        font-family: 'Tilt Neon';
     }
     h1  {
-        margin-top: 30px; 
-        margin-left: 30px;
+
+        
         font-size: 30px;
-        font-family: 'Tilt Neon';
     }
     
+    h3  {
+
+
+        margin-left: 20px;
+        font-size: 30px;
+    }
     footer{
         width:100%; 
         height:auto;
@@ -96,8 +99,16 @@
     a{
         font-family: 'Tilt Neon';
     }
+    h2 {
+        margin-top: 30px;
+        margin-left: 50px;
+        font-size: 20px;
+        padding-bottom: 20px; 
+    }
+    
 
 </style>
+{% load embed_video_tags %}
 <div class='text-center'>
     <nav>
         <ul>
@@ -110,12 +121,25 @@
     </div>
 </div>
 <div class="rounded-3 ">
-    <div class='container' style='border-radius: 15px;  max-width: 1200px; background-color: rgba(60, 129, 79, 0.5)' >
+    <div class='container' style='border-radius: 15px;  max-width: 1500px; background-color: rgba(60, 129, 79, 0.5)' >
         <div class='text-center'>
-            <h1>Коротко про математиу
-                
-            </h1>
+            <h1>Вступ</h1>
         </div>
+        <h2>
+            Слово математика ( μάθημα)  з давньогрецької означає “точне знання ”. <br>
+            Матема́тика  виникла  з практичних потреб людей рахувати, обчислювати, вимірювати, досліджувати форми та рух фізичних тіл. <br>
+            Загальноприйнятого визначення математики немає. <br>
+            <hr>
+            <p>• Математика — це мова, якою написано книгу природи (Галілео Галілей)</p>
+            <p>• Математика — цариця наук, арифметика — цариця математики (Карл Фрідріх Гаусс)</p>
+            <p>• Математика — це мистецтво називати різні речі тим самим ім'ям (Анрі Пуанкаре)</p>
+            <p>• Математика — наука про кількісні співвідношення і просторові форми дійсного світу (Фрідріх Енгельс)</p>
+            <p>• Математика — це єдиний досконалий метод водити самого себе за ніс (Альберт Ейнштейн)</p>
+            <p>• Математика – це та частина фізики, в якій експерименти дешеві. (Володимир Арнольд)</p>
+            <hr>
+            Зараз математика багатогранна наука про абстрактні кількісні та якісні співвідношення, форми й структури.
+        </h2>
+        
     </div>
 </div>
 <div class="image-container">
@@ -126,12 +150,14 @@
 <div class="rounded-3 ">
     <div class='container' style='border-radius: 15px;  max-width: 1500px; background-color: rgba(60, 129, 79, 0.5)' >
         <section id="section1">
-            <h1>Розділ 1</h1>
+            <h3>Математика 7 клас</h3>
+            <p1></p1>
         </section>
 
         <section id="section2">
-            <h1>Розділ 2</h1>
-            <p></p>
+            <h1>іввві</h1>
+            {% video "https://www.youtube.com/watch?v=dGF1x14QNGA" '500x700' %}
+
         </section>
 
         <section id="section3">

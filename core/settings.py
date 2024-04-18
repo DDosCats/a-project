@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'apps.main',
     'apps.physics',
     'apps.math_all',
+    'embed_video',
 ]
 
 MIDDLEWARE = [
@@ -58,7 +59,7 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [ BASE_DIR / 'templates', 'templates' ], # Add 'templates' to 'DIRS
+        'DIRS': [ BASE_DIR / 'templates' ], # Add 'templates' to 'DIRS
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
