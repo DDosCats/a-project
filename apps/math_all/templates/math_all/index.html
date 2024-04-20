@@ -1,127 +1,27 @@
-<!DOCTYPE html>
-<html lang="uk" data-bs-color="rgba(66, 78, 98, 1)">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %}{% endblock %}Math</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-<style>
+{% extends 'base.html' %}
 
-    nav {
-        color: transparent;
-    }
-    nav a {
-        text-decoration: none;
-    }    
-    
-    .form-switch {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-    }
+{% block title %}Каталог{% endblock %}
 
-    .image-container {
-        text-align: center;
-        position: relative;
-    }
-
-    .image-container img {
-        margin: 10px;
-        cursor: pointer;
-        width: 400px; 
-        height: 425px; 
-    }
-
-    .prev, .next {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        cursor: pointer;
-        color: white;
-        font-size: 30px;
-        background-color: rgba(0, 0, 0, 0.5);
-        padding: 10px;
-        border: none;
-        outline: none;
-        transition: background-color 0.3s;
-    }
-
-    .prev {
-        left: 10px;
-    }
-
-    .next {
-        right: 10px;
-    }
-    .prev:hover, .next:hover {
-        background-color: rgba(0, 0, 0, 0.7);
-    }
-    p {
-        margin-top: 20px; 
-        margin-left: 30px; 
-        font-size: 20px; 
-    }
-    p1 {
-        margin-top: 15pxpx; 
-        margin-left: 15px; 
-        font-size: 15px;
-    }
-    h1  {
-
-        
-        font-size: 30px;
-    }
-    
-    h3  {
-
-
-        margin-left: 20px;
-        font-size: 30px;
-    }
-    footer{
-        width:100%; 
-        height:auto;
-        background-color: rgba(60, 129, 79, 0.5);
-        margin: 0 auto;
-        text-align: center;
-        padding-top: 25px;
-        font-family: 'Tilt Neon';
-    }   
-    footer a{
-        color:none;
-        font-size: 22px;
-        margin-left: 10px;
-        font-family: 'Tilt Neon';
-    }
-    footer nav a:hover{
-        border-bottom: 1px solid white;
-    }
-    a{
-        font-family: 'Tilt Neon';
-    }
-    h2 {
-        margin-top: 30px;
-        margin-left: 50px;
-        font-size: 20px;
-        padding-bottom: 20px; 
-    }
-    
-
-</style>
+{% block content %}
 {% load embed_video_tags %}
-<div class='text-center'>
-    <nav>
-        <ul>
-            <li><a href="#section1">Математика (7 клас)</a> <a href="#section2">Математика (8 клас)</a> <a href="#section3">Математика (9 клас) <a href="#section4">Математика (10-11 класи)</a></li>
-        </ul>
-    </nav>
-</div>
+<nav id="navbar" > 
+    <ul style="list-style-type: none;"> 
+        <li><a href="{% url 'main:index' %}"><i class="fa-solid fa-house"></i></a></li>
+        <li class='text-center'>
+            <a href="#section1">Математика (7 клас)</a>
+            <a href="#section2">Математика (8 клас)</a>
+            <a href="#section3">Математика (9 клас)</a>
+            <a href="#section4">Математика (10-11 класи)</a>
+        </li>
+    </ul>
     <div class="form-check form-switch mt-3">
         <input class="form-check-input" type="checkbox" id="themeSwitch">
     </div>
+</nav>
+
 </div>
 <div class="rounded-3 ">
-    <div class='container' style='border-radius: 15px;  max-width: 1500px; background-color: rgba(60, 129, 79, 0.5)' >
+    <div class='container' style='border-radius: 15px;  max-width: 1500px; background-color: rgba(60, 129, 79, 0.5); margin-top: 60px;' >
         <div class='text-center'>
             <h1>Вступ</h1>
         </div>
@@ -142,22 +42,54 @@
         
     </div>
 </div>
-<div class="image-container">
-    <img id="currentImage" src="https://stend-sg.com/image/cache/data/shkola/Matematika/1061/1061-1/komplekt-portretov-velikie-matematiki%20(1)-300x300.jpg" alt="Великі математики">
-    <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
-    <button class="next" onclick="plusSlides(1)">&#10095;</button>
-</div>
+
 <div class="rounded-3 ">
-    <div class='container' style='border-radius: 15px;  max-width: 1500px; background-color: rgba(60, 129, 79, 0.5)' >
+    <div class='container' style='border-radius: 25px;  max-width: 1500px; background-color: rgba(60, 129, 79, 0.5)' >
         <section id="section1">
-            <h3>Математика 7 клас</h3>
-            <p1></p1>
+            <h3 style="margin-top: 10px;">Математика 7 клас</h3>
+            <h4>РОЗДІЛ 1</h4>
+            <p1>Степінь з натуральним показником</p1>
+            <div style="margin-left: 40px; margin-top: 10px; margin-bottom: 10px;">
+                {% video "https://www.youtube.com/watch?v=t8P27nSQuyk" '500x300' %}
+            </div>
+            <h4>РОЗДІЛ 2</h4>
+            <p1> Раціональні вирази та їх перетворення </p1>
+            <div style="margin-left: 40px; margin-top: 10px; margin-bottom: 10px;">
+                {% video "https://www.youtube.com/watch?v=EWXMr2IZUuI" '500x300' %}
+            </div>
+            <h4>РОЗДІЛ  3</h4>
+            <p1>Лінійні рівняння. Лінійні нерівності</p1><br>
+            <div style="margin-left: 40px; margin-top: 10px; margin-bottom: 10px;">
+                {% video "https://www.youtube.com/watch?v=ndyzL1rQ9hw" '500x300' %}
+            </div>
+            <p1> Лінійна функція. Графіки  </p1>
+            <div style="margin-left: 40px; margin-top: 10px; margin-bottom: 10px;">
+                {% video "https://www.youtube.com/watch?v=hmUJdHOJuIQ" '500x300' %}
+            </div>
+            <h4>РОЗДІЛ 4</h4>
+            <p1>Системи лінійних рівнянь із двома змінними</p1>
+            <div style="margin-left: 40px; margin-top: 10px; margin-bottom: 10px;">
+                {% video "https://www.youtube.com/watch?v=FCN3ThzoYr0" '500x300' %}
+            </div>
         </section>
-
+        <hr>
         <section id="section2">
-            <h1>іввві</h1>
-            {% video "https://www.youtube.com/watch?v=dGF1x14QNGA" '500x700' %}
-
+             <h3 style="margin-top: 10px;">Математика 8 клас</h3>
+            <h4>РОЗДІЛ 1</h4>
+            <p1>Раціональні вирази  та їх перетворення</p1>
+            <div style="margin-left: 40px; margin-top: 10px; margin-bottom: 10px;">
+                {% video "https://www.youtube.com/watch?v=mgNeFmRRIYs" '500x300' %}
+            </div>
+            <h4>РОЗДІЛ 2</h4>
+            <p1>Дійсні числа. Квадратні корені</p1>
+            <div style="margin-left: 40px; margin-top: 10px; margin-bottom: 10px;"> 
+                {% video "https://www.youtube.com/watch?v=0rlkwAiROLg" '500x300' %}
+            </div>
+            <h4>РОЗДІЛ 3</h4>
+            <p1>Квадратні рівняння</p1>
+            <div style="margin-left: 40px; margin-top: 10px; margin-bottom: 10px;">
+                {% video "https://www.youtube.com/watch?v=bUA4_ynbFpU" '500x300' %}
+            </div>
         </section>
 
         <section id="section3">
@@ -172,58 +104,4 @@
     </div>
 </div>
 
-<script>
-    var slideIndex = 1;
-    showSlides(slideIndex);
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
-    function showSlides(n) {
-        var images = [
-            "https://stend-sg.com/image/cache/data/shkola/Matematika/1061/1061-1/komplekt-portretov-velikie-matematiki%20(1)-300x300.jpg",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxy4p6_YNpm5rlblRa8zDCaTqTdiROsrjuZTScJ_NX0A&s"
-        ];
-        var img = document.getElementById("currentImage");
-        if (n > images.length) {slideIndex = 1}    
-        if (n < 1) {slideIndex = images.length}
-        img.src = images[slideIndex-1];
-    }
-</script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script>
-        $(document).ready(function(){
-      function toggleTheme(theme) {
-        $('html').attr('data-bs-theme', theme);
-        localStorage.setItem('theme', theme);
-      }
-
-      var savedTheme = localStorage.getItem('theme');
-      if (savedTheme) {
-        toggleTheme(savedTheme);
-        $('#themeSwitch').prop('checked', savedTheme === 'dark');
-      }
-
-      $('#themeSwitch').change(function(){
-        toggleTheme(this.checked ? 'dark' : 'light');
-      });
-    });
-    </script>
-</head>
-<body>
-<div class= 'rounded-3'>
-    <footer> 
-        <div class="row">
-            <div class="col-md-6">
-                <h3>Про нас</h3>
-                <p1>Крута компанія</p1>
-            </div>
-            <div class="col-md-6">
-                <h3>Контакти</h3>
-                <p1>Контакти а шо</p1>
-            </div>
-        </div>
-    </footer>
-</div>
-</body>
-</html>
+{% endblock %}

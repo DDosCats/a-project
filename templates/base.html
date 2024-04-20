@@ -1,45 +1,135 @@
 <!DOCTYPE html>
-<html lang="uk" data-bs-theme="dark">
+<html lang="uk">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %}{% endblock %}-???</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    {% include 'include_block/_main_navbar.html' %}
-</head>
-<body>
-    <div class="container">
-        {% block breadcrumbs %}
-            {% include 'include_block/_breadcrumbs.html' %}
-        {% endblock %}
-        {% if messages %}
-            {% for message in messages %}
-                <div class="mt-3 alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-                    {{ message }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            {% endfor %}
-        {% endif %}
-        {% block content %}{% endblock %}
-    </div>
+    <title>{% block title %}{% endblock %}Math</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        <style>
+
+            :root {
+                --text: #0f1a17;
+        
+            }
+        
+            [data-bs-theme="dark"] {
+                --text: #e5f0ed;
+        
+            }
+        
+        
+            nav {
+                color: transparent;
+                color: var(--text);
+            }
+            nav a {
+                text-decoration: none;
+                color: var(--text);
+            }    
+            
+            .form-switch {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+            }
+        
+            
+            p1 {
+                margin-top: 15px; 
+                margin-left: 15px; 
+                font-size: 23px;
+                color: var(--text);
+            }
+            h4 {
+                margin-top: 15px; 
+                margin-left: 40px; 
+                font-size: 27px;
+                color: var(--text);
+            }
+            h1  {
+        
+                
+                font-size: 30px;
+            }
+            
+            h3  {
+                margin-left: 20px;
+                font-size: 35px;
+            }
+            footer{
+                width:100%; 
+                height:auto;
+                background-color: rgba(60, 129, 79, 0.5);
+                margin: 0 auto;
+                text-align: center;
+                padding-top: 25px;
+                font-family: 'Tilt Neon';
+            }   
+            footer a{
+                color:none;
+                font-size: 22px;
+                margin-left: 10px;
+                font-family: 'Tilt Neon';
+            }
+            footer nav a:hover{
+                border-bottom: 1px solid white;
+            }
+            a{
+                font-family: 'Tilt Neon';
+            }
+            h2 {
+                margin-top: 30px;
+                margin-left: 50px;
+                font-size: 20px;
+                padding-bottom: 20px; 
+            }
+        
+            #navbar {
+                position: fixed;
+                top: 5px;
+                width: 100%;
+            }
+            nav{
+                background-color: ;
+            }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function(){
             function toggleTheme(theme) {
                 $('html').attr('data-bs-theme', theme);
                 localStorage.setItem('theme', theme);
             }
+
             var savedTheme = localStorage.getItem('theme');
             if (savedTheme) {
                 toggleTheme(savedTheme);
                 $('#themeSwitch').prop('checked', savedTheme === 'dark');
             }
+
             $('#themeSwitch').change(function(){
                 toggleTheme(this.checked ? 'dark' : 'light');
             });
         });
     </script>
+
+    <footer> 
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Про нас</h3>
+                <p1>Крута компанія</p1>
+            </div>
+            <div class="col-md-6">
+                <h3>Контакти</h3>
+                <p1>Контакти а шо</p1>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

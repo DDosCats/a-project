@@ -5,5 +5,3 @@ def index(request):
     return render(request, 'main/index.html')
 
 
-def lolasdasdasd(request):
-    return HttpResponse('<h1>LOL</h1>')
