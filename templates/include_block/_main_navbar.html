@@ -1,3 +1,18 @@
+<style>
+  nav {
+      color: var(--text);
+      background-color: var(--accent);
+  }
+  nav a {
+      text-decoration: none;
+      color: var(--text);
+  }
+  a{
+    font-family: 'Tilt Neon';
+    color: var(--text);
+  }    
+
+</style>
 <a class="btn btn-outline-primary btn-sm" href="{% url 'admin:index' %}">Admin</a>
 
 <nav class="navbar navbar-expand-lg">
@@ -9,7 +24,7 @@
       <div class="collapse navbar-collapse" id="navbarNav ">
         <ul class="navbar-nav d-flex justify-content-center"> 
             <li class="nav-item">
-              <a class="nav-link" href="sdsdsa">Фізика</a>
+              <a class="nav-link" href="{% url 'physics' %}">Фізика</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'matan'%}">Математика</a>
